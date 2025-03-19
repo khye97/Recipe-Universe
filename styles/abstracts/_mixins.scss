@@ -1,0 +1,14 @@
+@use "../base/typography";
+@use "variables";
+
+@mixin card-title() {
+  font-family: typography.$font-title;
+  font-size: typography.$font-size-24;
+  line-height: typography.$line-height-120;
+}
+
+@mixin card-info() {
+  font-family: typography.$font-main;
+  font-size: typography.$font-size-14;
+  color: variables.$secondary;
+}
