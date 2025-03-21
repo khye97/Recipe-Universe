@@ -1,8 +1,204 @@
+@use "index";
+
 @use "base/reset";
 
 @use "components/card";
+@use "components/button";
 
 @use "layout/header";
 @use "layout/grid";
 
+main {
+  padding-top: 80px;
+}
+
 /* section01 - main-slider */
+.main-slider {
+  background-color: index.$background;
+
+  .main-slider-inner {
+    .container {
+      padding: 32px 0;
+      position: relative;
+
+      .slide-list {
+        position: relative;
+
+        .slide-item {
+          position: relative;
+          margin-right: 20px;
+          display: inline-block;
+
+          .content-wrap {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            z-index: 20;
+            transform: translateY(-50%);
+            // width: 470px;
+            width: 40%;
+            padding: 16px;
+            background-color: index.$white;
+            box-shadow: index.$shadow;
+
+            .content-border {
+              border: 2px solid index.$yellow;
+              padding: 32px;
+
+              .category {
+                display: inline-block;
+                font-size: index.$font-size-14;
+                color: index.$green;
+                margin-bottom: 8px;
+              }
+
+              .title {
+                font-family: index.$font-title;
+                font-size: 30px;
+                font-weight: 400;
+                line-height: index.$line-height-120;
+                margin-bottom: 16px;
+              }
+
+              .desc {
+                font-size: index.$font-size-14;
+                margin-bottom: 16px;
+              }
+            }
+          }
+          .image {
+            position: absolute;
+            right: 0;
+            z-index: 10;
+            width: 63%;
+
+            img {
+              width: 100%;
+              height: inherit;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 30;
+        font-size: 24px;
+        background-color: rgba(index.$background, 0.5);
+        border-radius: 50%;
+        // border: 1px solid index.$border;
+      }
+
+      .prev {
+        left: 15px;
+      }
+
+      .next {
+        right: 20px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .main-slider-inner {
+      .container {
+        padding: 0;
+        margin-left: -10px;
+        margin-right: -10px;
+
+        .slide-list {
+          .slide-item {
+            margin-right: 0;
+
+            .content-wrap {
+              width: 95%;
+              top: 370px;
+              left: 50%;
+              transform: translate(-50%, 0);
+            }
+
+            .image {
+              width: 100%;
+              height: 400px;
+
+              img {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 577px) and (max-width: 768px) {
+    .main-slider-inner {
+      .container {
+        padding: 0;
+        margin-left: -10px;
+        margin-right: -10px;
+
+        .slide-list {
+          .slide-item {
+            margin-right: 0;
+
+            .content-wrap {
+              width: 95%;
+              // top: auto;
+              // bottom: 3%;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, 0);
+            }
+
+            .image {
+              width: 100%;
+              height: 350px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .main-slider-inner {
+      .container {
+        padding: 0;
+        margin-left: -10px;
+        margin-right: -10px;
+
+        .slide-list {
+          .slide-item {
+            margin-right: 0;
+
+            .content-wrap {
+              width: 95%;
+              // top: auto;
+              // bottom: 2%;
+              top: 230px;
+              left: 50%;
+              transform: translate(-50%, 0);
+
+              .content-border {
+                padding: 16px;
+
+                .title {
+                  font-size: 24px;
+                }
+              }
+            }
+
+            .image {
+              width: 100%;
+              height: 250px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
