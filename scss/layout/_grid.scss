@@ -18,7 +18,7 @@ xl : <= 1025px
   display: grid;
   max-width: index.$pc-max-width;
   grid-template-columns: repeat(12, 1fr);
-  gap: 20px;
+  column-gap: 20px;
 }
 
 @media screen and (max-width: 576px) {
