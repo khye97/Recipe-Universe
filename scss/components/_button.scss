@@ -7,6 +7,14 @@
   color: index.$white;
   border-radius: 8px;
   padding: 8px 24px;
+  border: 2px solid transparent;
+  transition: all 200ms;
+
+  &:hover {
+    background-color: index.$white;
+    border: 2px solid index.$green;
+    color: index.$green;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -17,5 +25,13 @@
     color: index.$white;
     border-radius: 8px;
     padding: 10px 20px;
+    border: 2px solid transparent;
+    transition: all 200ms;
+
+    &:hover {
+      background-color: index.$white;
+      border: 2px solid index.$green;
+      color: index.$green;
+    }
   }
 }
