@@ -7,6 +7,7 @@
 
 @use "layout/header";
 @use "layout/grid";
+@use "layout/responsive" as *;
 
 main {
   padding-top: 80px;
@@ -103,7 +104,9 @@ main {
     }
   }
 
-  @media screen and (min-width: 769px) and (max-width: 1024px) {
+  @include responsive(lg) {
+    margin-bottom: index.$lg-margin-bottom;
+
     .main-slider-inner {
       .container {
         padding: 0;
@@ -134,7 +137,9 @@ main {
     }
   }
 
-  @media screen and (min-width: 577px) and (max-width: 768px) {
+  @include responsive(md) {
+    margin-bottom: index.$md-margin-bottom;
+
     .main-slider-inner {
       .container {
         padding: 0;
@@ -164,7 +169,9 @@ main {
     }
   }
 
-  @media screen and (max-width: 576px) {
+  @include responsive(sm) {
+    margin-bottom: index.$sm-margin-bottom;
+
     .main-slider-inner {
       .container {
         padding: 0;
@@ -215,9 +222,6 @@ section.search {
 
         .content-wrap {
           display: inline-block;
-          // display: flex;
-          // flex-direction: column;
-          // align-items: center;
 
           .slogan {
             font-size: index.$font-size-24;
@@ -278,5 +282,74 @@ section.search {
 
   @media screen and (max-width: 1024px) {
     display: none;
+  }
+}
+
+/* section03 - ingredient ---------------------------------------------*/
+.ingredient {
+  margin-bottom: index.$xl-margin-bottom;
+
+  .ingredient-inner {
+    .container {
+      .ingredient-item {
+        display: block;
+        text-align: center;
+
+        &:hover {
+          .image {
+            box-shadow: index.$card-shadow;
+            transform: translateY(-5px);
+          }
+        }
+
+        .image {
+          aspect-ratio: 1 / 1;
+          border-radius: 50%;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 16px;
+          transition: all 150ms;
+
+          img {
+            display: block;
+            // width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .title {
+          font-size: index.$font-size-16;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .ingredient-inner {
+      .container {
+        .ingredient-item {
+          &:first-child,
+          &:nth-child(3),
+          &:nth-child(5) {
+            margin-bottom: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(lg) {
+    margin-bottom: index.$lg-margin-bottom;
+  }
+
+  @include responsive(md) {
+    margin-bottom: index.$md-margin-bottom;
+  }
+
+  @include responsive(sm) {
+    margin-bottom: index.$sm-margin-bottom;
   }
 }
