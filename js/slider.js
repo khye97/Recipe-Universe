@@ -1,9 +1,11 @@
 // section01 - main slider ---------------------------------------------------------
-$(".main-slider .slide-list").slick({
-  // infinite: false,
-  adaptiveHeight: true,
-  prevArrow: $(".main-slider .prev"),
-  nextArrow: $(".main-slider .next"),
+var swiper = new Swiper(".main-slider .swiper", {
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: ".main-slider .swiper-button-next",
+    prevEl: ".main-slider .swiper-button-prev",
+  },
 });
 
 // 슬라이더의 높이 계산 함수
@@ -39,3 +41,25 @@ $(window)
     updateSliderHeights();
   })
   .resize();
+
+// section04 - today's pick ---------------------------------------------------------
+var swiper = new Swiper(".todays-pick .swiper", {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  // loop: true,
+  navigation: {
+    nextEl: ".todays-pick .swiper-button-next",
+    prevEl: ".todays-pick .swiper-button-prev",
+  },
+  breakpoints: {
+    576: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  },
+});
