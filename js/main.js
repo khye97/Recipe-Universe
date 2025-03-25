@@ -1,16 +1,15 @@
 $("header").load("/include/header.html", function () {
   // header btn-search show/hide
-  $(".btn-search").on("click", function () {
+  $(".header .btn-search").on("click", function () {
     if (window.matchMedia("(min-width: 1024px)").matches) {
-      console.log("search-bar is hidden?", $(".search-bar").is(":hidden"));
-      if ($(".search-bar").is(":hidden")) {
-        $(".search-bar").show();
+      if ($(".header .search-bar").is(":hidden")) {
+        $(".header .search-bar").show();
       } else {
-        if ($(".search-bar").val() !== "") {
+        if ($(".header .search-bar").val() !== "") {
           // 검색어가 입력되어 있을 경우 동작할 코드
           return;
         } else {
-          $(".search-bar").hide();
+          $(".header .search-bar").hide();
         }
       }
     }
@@ -57,4 +56,13 @@ $("header").load("/include/header.html", function () {
       $lnb.slideUp(100);
     }
   });
+});
+
+// main section ------------------------------------
+
+// today's pick .card-back background-image url
+let card = document.querySelectorAll(".todays-pick .card");
+card.forEach(function (cardItem) {
+  let imageSrc = cardItem.querySelector(".image img").src;
+  cardItem.style.setProperty("--card-bg-img", `url(${imageSrc})`);
 });
