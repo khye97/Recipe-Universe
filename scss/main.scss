@@ -1,6 +1,7 @@
 @use "index";
 
 @use "base/reset";
+@use "base/common";
 
 @use "components/card";
 @use "components/button";
@@ -8,6 +9,10 @@
 @use "layout/header";
 @use "layout/grid";
 @use "layout/responsive" as *;
+
+:root {
+  --card-bg-img: url("/image/section04-todays-pick/section04-todays-pick-01.jpeg");
+}
 
 main {
   padding-top: 80px;
@@ -18,16 +23,14 @@ main {
   background-color: index.$background;
 
   .main-slider-inner {
-    .container {
+    .main-slider-container {
       padding: 32px 0;
-      position: relative;
 
       .slide-list {
         position: relative;
 
         .slide-item {
           position: relative;
-          margin-right: 20px;
           display: inline-block;
 
           .content-wrap {
@@ -81,26 +84,6 @@ main {
           }
         }
       }
-
-      .prev,
-      .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 30;
-        font-size: 24px;
-        background-color: rgba(index.$background, 0.5);
-        border-radius: 50%;
-        // border: 1px solid index.$border;
-      }
-
-      .prev {
-        left: 15px;
-      }
-
-      .next {
-        right: 20px;
-      }
     }
   }
 
@@ -108,7 +91,7 @@ main {
     margin-bottom: index.$lg-margin-bottom;
 
     .main-slider-inner {
-      .container {
+      .main-slider-container {
         padding: 0;
         margin-left: -10px;
         margin-right: -10px;
@@ -141,7 +124,7 @@ main {
     margin-bottom: index.$md-margin-bottom;
 
     .main-slider-inner {
-      .container {
+      .main-slider-container {
         padding: 0;
         margin-left: -10px;
         margin-right: -10px;
@@ -173,7 +156,7 @@ main {
     margin-bottom: index.$sm-margin-bottom;
 
     .main-slider-inner {
-      .container {
+      .main-slider-container {
         padding: 0;
         margin-left: -10px;
         margin-right: -10px;
@@ -351,5 +334,135 @@ section.search {
 
   @include responsive(sm) {
     margin-bottom: index.$sm-margin-bottom;
+  }
+}
+
+/* section04 - today's pick ------------------------------------------ */
+.todays-pick {
+  background-color: index.$background;
+  padding: 72px 0;
+
+  .todays-pick-inner {
+    .todays-pick-container {
+      .slide-list {
+        .slide-item {
+          width: 280px;
+          height: 355px;
+
+          .card {
+            width: inherit;
+            height: inherit;
+
+            &:hover .card-wrap {
+              transform: rotateY(180deg);
+            }
+
+            .card-wrap {
+              position: relative;
+              transition: transform 0.8s;
+              /* trasform이 3d 모양으로 되도록 설정 */
+              transform-style: preserve-3d;
+              width: inherit;
+              height: inherit;
+
+              .card-front,
+              .card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                /* 플립된 카드의 뒷면이 안보이도록 설정 */
+                backface-visibility: hidden;
+                top: 0;
+                left: 0;
+              }
+
+              .card-front {
+                width: 100%;
+                height: 100%;
+
+                &::before {
+                  content: "";
+                  position: absolute;
+                  bottom: 0;
+                  background: linear-gradient(
+                    0deg,
+                    rgba(17, 17, 17, 0.8) 0%,
+                    rgba(transparent, 0) 40%
+                  );
+                  width: 100%;
+                  height: 100%;
+                }
+
+                .image {
+                  width: inherit;
+                  height: inherit;
+
+                  img {
+                    width: inherit;
+                    height: inherit;
+                    object-fit: cover;
+                  }
+                }
+
+                .title {
+                  @include index.card-title();
+                  position: absolute;
+                  bottom: 16px;
+                  left: 16px;
+                  width: 90%;
+                  display: block;
+                  color: index.$white;
+                }
+              }
+
+              .card-back {
+                transform: rotateY(180deg);
+                padding: 16px;
+
+                &::before {
+                  content: "";
+                  background-color: rgba(0, 0, 0, 0.7);
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  z-index: -1; /* 텍스트보다 아래에 위치 */
+                }
+
+                &::after {
+                  content: "";
+                  background: var(--card-bg-img) no-repeat center/cover;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  transform: scaleX(-1);
+                  z-index: -2; /* ::before와 텍스트 아래에 위치 */
+                }
+
+                .card-border {
+                  height: 100%;
+                  color: index.$white;
+                  padding: 16px;
+                  border: 1px solid index.$yellow;
+
+                  .title {
+                    @include index.card-title();
+                    display: block;
+                    margin-bottom: 16px;
+                  }
+
+                  .desc {
+                    margin-bottom: 16px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
