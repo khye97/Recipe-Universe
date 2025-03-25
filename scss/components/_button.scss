@@ -11,7 +11,7 @@
   transition: all 200ms;
 
   &:hover {
-    background-color: index.$white;
+    background-color: transparent;
     border: 2px solid index.$green;
     color: index.$green;
   }
@@ -29,7 +29,7 @@
     transition: all 200ms;
 
     &:hover {
-      background-color: index.$white;
+      background-color: transparent;
       border: 2px solid index.$green;
       color: index.$green;
     }
