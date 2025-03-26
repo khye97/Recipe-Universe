@@ -66,3 +66,18 @@ card.forEach(function (cardItem) {
   let imageSrc = cardItem.querySelector(".image img").src;
   cardItem.style.setProperty("--card-bg-img", `url(${imageSrc})`);
 });
+
+// card bookmark button
+$(".book-mark").on("click", function () {
+  $(this).children().toggleClass("bi-bookmark bi-bookmark-fill");
+});
+
+// meal-tabs tab menu
+$(".tab").on("click", function () {
+  let activeTab = $(this).attr("data-tab");
+  let activeTabPanel = $(`#${activeTab}`);
+  $(".tab.active").removeClass("active");
+  $(this).addClass("active");
+  $(".tab-panel.active").removeClass("active");
+  $(activeTabPanel).addClass("active");
+});
