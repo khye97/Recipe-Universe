@@ -521,3 +521,164 @@ section.search {
     }
   }
 }
+
+/* section06 - banner ------------------------------------------ */
+.banner {
+  background-image: url("/image/section06-banner/banner-bg.jpg");
+  background-color: index.$background;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 260px;
+  width: 100%;
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    .banner-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      padding-left: 50px;
+
+      .content {
+        .banner-type {
+          font-size: index.$font-size-20;
+          color: index.$secondary;
+          font-weight: 600;
+        }
+
+        .title-wrap {
+          display: flex;
+          align-items: center;
+          column-gap: 30px;
+          margin-bottom: 20px;
+
+          img {
+            height: 70px;
+          }
+
+          .discount-percent {
+            font-size: 64px;
+            font-weight: 700;
+            color: index.$green;
+            transform: translateY(-9px);
+            white-space: nowrap;
+          }
+        }
+
+        .countdown-wrap {
+          display: flex;
+          align-items: center;
+          column-gap: 16px;
+
+          span {
+            font-size: index.$font-size-24;
+            font-weight: 600;
+            white-space: nowrap;
+          }
+
+          #banner-countdown {
+            font-size: 36px;
+            white-space: nowrap;
+
+            span {
+              display: inline-block;
+              width: 50px;
+              height: 50px;
+              background-color: index.$primary;
+              color: index.$white;
+              border-radius: 8px;
+              font-size: 32px;
+              text-align: center;
+              line-height: 50px;
+            }
+          }
+        }
+      }
+      .image {
+        img {
+          width: 366px;
+        }
+      }
+    }
+  }
+
+  @include responsive(lg) {
+    // background-size: cover;
+    height: 195px;
+
+    a {
+      .banner-inner {
+        padding-left: 40px;
+
+        .content {
+          .title-wrap {
+            margin-bottom: 10px;
+
+            img {
+              height: 48px;
+            }
+
+            .discount-percent {
+              font-size: 40px;
+            }
+          }
+
+          .countdown-wrap {
+            #banner-countdown {
+              span {
+                width: 40px;
+                height: 40px;
+                background-color: index.$primary;
+                color: index.$white;
+                border-radius: 8px;
+                font-size: 24px;
+                text-align: center;
+                line-height: 40px;
+              }
+            }
+          }
+        }
+        .image {
+          align-self: flex-end;
+
+          img {
+            width: 230px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    background-image: url("/image/section06-banner/banner-mobile-bg.jpg");
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+
+    a {
+      .banner-inner {
+        flex-direction: column;
+        padding: 30px 10px 0;
+
+        .content {
+          .title-wrap {
+            flex-direction: column;
+            margin-bottom: 0;
+            img {
+            }
+          }
+
+          .countdown-wrap {
+            flex-direction: column;
+            row-gap: 16px;
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
+  }
+}
