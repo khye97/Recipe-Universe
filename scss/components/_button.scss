@@ -6,7 +6,9 @@
   background-color: index.$green;
   color: index.$white;
   border-radius: 8px;
-  padding: 8px 24px;
+  // padding: 8px 24px;
+  width: 150px;
+  height: 40px;
   border: 2px solid transparent;
   transition: all 200ms;
 
@@ -24,7 +26,7 @@
     background-color: index.$green;
     color: index.$white;
     border-radius: 8px;
-    padding: 10px 20px;
+    // padding: 10px 20px;
     border: 2px solid transparent;
     transition: all 200ms;
 
