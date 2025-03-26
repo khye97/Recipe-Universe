@@ -81,3 +81,10 @@ $(".tab").on("click", function () {
   $(".tab-panel.active").removeClass("active");
   $(activeTabPanel).addClass("active");
 });
+
+// banner countdown
+$("#banner-countdown").countdown("2025/12/12", function (event) {
+  $(this).html(
+    event.strftime("<span>%H</span>:<span>%M</span>:<span>%S</span>")
+  );
+});
