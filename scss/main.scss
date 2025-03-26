@@ -349,15 +349,15 @@ section.search {
           width: 280px;
           height: 355px;
 
-          .card {
+          .todays-pick-card {
             width: inherit;
             height: inherit;
 
-            &:hover .card-wrap {
+            &:hover .todays-pick-card-wrap {
               transform: rotateY(180deg);
             }
 
-            .card-wrap {
+            .todays-pick-card-wrap {
               position: relative;
               transition: transform 0.8s;
               /* trasform이 3d 모양으로 되도록 설정 */
@@ -412,6 +412,7 @@ section.search {
                   width: 90%;
                   display: block;
                   color: index.$white;
+                  font-weight: 400;
                 }
               }
 
@@ -452,6 +453,7 @@ section.search {
                     @include index.card-title();
                     display: block;
                     margin-bottom: 16px;
+                    font-weight: 400;
                   }
 
                   .desc {
@@ -462,6 +464,59 @@ section.search {
             }
           }
         }
+      }
+    }
+  }
+}
+
+/* section05 - meal-tabs ------------------------------------------ */
+.meal-tabs {
+  background-color: index.$background;
+  padding: 72px 0;
+
+  .meal-tabs-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .section-title {
+      span {
+        color: index.$green;
+      }
+    }
+
+    .container {
+      row-gap: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 32px;
+
+      .tab {
+        font-size: index.$font-size-18;
+        display: inline;
+        margin-right: 32px;
+        cursor: pointer;
+
+        &.active {
+          color: index.$green;
+          font-weight: 500;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .tab-panel {
+      margin-bottom: 32px;
+      display: none;
+
+      &.active {
+        display: grid;
       }
     }
   }
