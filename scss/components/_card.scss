@@ -1,1 +1,122 @@
 @use "../index";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: index.$shadow;
+  background-color: index.$white;
+  position: relative;
+  transition: all 200ms;
+  height: 100%;
+
+  &:hover {
+    box-shadow: index.$card-shadow;
+    transform: translateY(-5px);
+  }
+
+  .book-mark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+
+    i {
+      font-size: 24px;
+      color: index.$navy;
+    }
+  }
+
+  .image {
+    aspect-ratio: 1.3 / 1;
+    flex: 0 0 auto;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    flex: 1 1 auto;
+
+    .keyword {
+      @include index.card-info();
+      margin-bottom: 16px;
+
+      span {
+        &::after {
+          content: "|";
+          padding: 4px;
+        }
+
+        &:last-child::after {
+          content: none;
+        }
+      }
+    }
+
+    .title {
+      @include index.card-title();
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .info {
+      @include index.card-info();
+      display: flex;
+      column-gap: 24px;
+
+      .time {
+        i {
+          margin-right: 2px;
+        }
+        span {
+        }
+      }
+
+      .star-rating {
+        span {
+          margin-right: 4px;
+        }
+
+        .stars {
+          display: inline;
+
+          i {
+            color: index.$yellow;
+          }
+        }
+      }
+
+      .review {
+        i {
+          display: inline-block;
+          margin-right: 2px;
+          transform: translateY(2px);
+        }
+
+        span {
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .content {
+      .info {
+        column-gap: 16px;
+        flex-wrap: wrap;
+        row-gap: 8px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 16px;
+  }
+}
