@@ -60,18 +60,21 @@ $("header").load("/include/header.html", function () {
 
 // main section ------------------------------------
 
-// today's pick .card-back background-image url
-let card = document.querySelectorAll(".todays-pick .card");
-card.forEach(function (cardItem) {
-  let imageSrc = cardItem.querySelector(".image img").src;
-  cardItem.style.setProperty("--card-bg-img", `url(${imageSrc})`);
-});
-
 // card bookmark button
 $(".book-mark").on("click", function () {
   $(this).children().toggleClass("bi-bookmark bi-bookmark-fill");
 });
 
+// taday's pick -----------------------
+// today's pick .card-back background-image url
+let card = document.querySelectorAll(".todays-pick .todays-pick-card");
+card.forEach(function (cardItem) {
+  let imageSrc = cardItem.querySelector(".todays-pick .image img").src;
+
+  cardItem.style.setProperty("--card-bg-img", `url(${imageSrc})`);
+});
+
+// meal-tabs ----------------------------
 // meal-tabs tab menu
 $(".tab").on("click", function () {
   let activeTab = $(this).attr("data-tab");
@@ -80,6 +83,9 @@ $(".tab").on("click", function () {
   $(this).addClass("active");
   $(".tab-panel.active").removeClass("active");
   $(activeTabPanel).addClass("active");
+
+  let capitalize = activeTab[0].toUpperCase() + activeTab.slice(1);
+  $(".meal-tabs .section-title span").text(capitalize);
 });
 
 // banner countdown
