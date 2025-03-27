@@ -18,6 +18,11 @@ main {
   padding-top: 80px;
 }
 
+::selection {
+  color: index.$white;
+  background-color: index.$yellow;
+}
+
 /* section01 - main-slider ------------------------------------------- */
 .main-slider {
   background-color: index.$background;
@@ -195,7 +200,7 @@ main {
 
 /* section02 - search ------------------------------------------------ */
 section.search {
-  padding: 72px 0;
+  padding: index.$section-padding;
 
   .search-inner {
     .container {
@@ -340,7 +345,7 @@ section.search {
 /* section04 - today's pick ------------------------------------------ */
 .todays-pick {
   background-color: index.$background;
-  padding: 72px 0;
+  padding: index.$section-padding;
 
   .todays-pick-inner {
     .todays-pick-container {
@@ -472,7 +477,7 @@ section.search {
 /* section05 - meal-tabs ------------------------------------------ */
 .meal-tabs {
   background-color: index.$background;
-  padding: 72px 0;
+  padding: index.$section-padding;
 
   .meal-tabs-inner {
     display: flex;
@@ -676,6 +681,27 @@ section.search {
             flex-direction: column;
             row-gap: 16px;
             margin-bottom: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* section07 - quick&easy ------------------------------------------ */
+.quick-easy {
+  background-color: index.$background;
+  padding: index.$section-padding;
+
+  .quick-easy-inner {
+    .quick-easy-container {
+      .slide-list {
+        .slide-item {
+          height: auto;
+          margin-bottom: 15px;
+
+          .card {
+            margin-bottom: 10px;
           }
         }
       }
