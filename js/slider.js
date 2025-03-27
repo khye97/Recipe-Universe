@@ -63,3 +63,26 @@ var swiper = new Swiper(".todays-pick .swiper", {
     },
   },
 });
+
+// section07 - quick & easy
+var swiper = new Swiper(".quick-easy .swiper", {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  autoHeight: false,
+  loop: true,
+  navigation: {
+    nextEl: ".quick-easy .swiper-button-next",
+    prevEl: ".quick-easy .swiper-button-prev",
+  },
+  breakpoints: {
+    576: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  },
+});
