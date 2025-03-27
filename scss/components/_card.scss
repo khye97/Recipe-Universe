@@ -11,7 +11,7 @@
 
   &:hover {
     box-shadow: index.$card-shadow;
-    transform: translateY(-5px);
+    // transform: translateY(-5px);
   }
 
   .book-mark {
@@ -69,7 +69,9 @@
     .info {
       @include index.card-info();
       display: flex;
+      flex-wrap: wrap;
       column-gap: 24px;
+      row-gap: 10px;
 
       .time {
         i {
