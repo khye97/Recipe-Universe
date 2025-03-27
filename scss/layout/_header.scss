@@ -357,6 +357,10 @@
             margin-bottom: 30px;
 
             .menu-item {
+              &::after {
+                pointer-events: none;
+              }
+
               .menu-item-wrap {
                 position: relative;
 

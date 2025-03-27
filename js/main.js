@@ -27,7 +27,7 @@ $("header").load("/include/header.html", function () {
   });
 
   // mobile-nav close (사이드바 외부 클릭 시 닫힘)
-  $(document).on("mouseup", function (event) {
+  $(document).on("touchend", function (event) {
     if ($(".nav").has(event.target).length === 0) {
       $(".nav").removeClass("active");
     }
@@ -43,18 +43,27 @@ $("header").load("/include/header.html", function () {
     $(".mobile-search").removeClass("active");
   });
 
-  // mobile-nav item open
-  $(".menu-item-wrap").on("click", function () {
-    let $lnb = $(this).next();
+  // nav accordion menu open
+  $(".menu-item-wrap").on("touchend", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    let $lnb = $(this).next(".lnb");
     let $chevron = $(this).children("i");
 
-    if ($lnb.css("display") == "none") {
+    if ($lnb.is(":hidden")) {
       $chevron.css("transform", "translateY(-50%) rotate(180deg)");
-      $lnb.slideDown(100);
+      $lnb.slideDown(200);
     } else {
       $chevron.css("transform", "translateY(-50%) rotate(0deg)");
-      $lnb.slideUp(100);
+      $lnb.slideUp(200);
     }
+  });
+
+  $(".menu-item-wrap a").on("touchend", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $(this).closest(".menu-item-wrap").trigger("touchend");
   });
 });
 
