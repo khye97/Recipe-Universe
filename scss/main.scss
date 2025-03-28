@@ -919,3 +919,131 @@ section.search {
     }
   }
 }
+
+/* section09 - table-talk ------------------------------------------ */
+.table-talk {
+  background-color: index.$background;
+  padding: index.$section-padding;
+
+  .table-talk-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .container {
+      row-gap: 20px;
+      margin-bottom: 32px;
+
+      .table-talk-card {
+        display: flex;
+        box-shadow: index.$card-shadow;
+        border: 1px solid rgba(index.$border, 0.3);
+        height: 280px;
+
+        .image {
+          width: 380px;
+          overflow: hidden;
+          flex-shrink: 0;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .content-wrap {
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .content {
+            .category {
+              display: block;
+              color: index.$green;
+              margin-bottom: 8px;
+            }
+
+            .title {
+              font-family: index.$font-title;
+              font-size: index.$font-size-24;
+              font-weight: 500;
+              margin-bottom: 16px;
+              line-height: index.$line-height-120;
+            }
+
+            .desc {
+              margin-bottom: 16px;
+            }
+          }
+
+          .author {
+            display: flex;
+
+            img {
+              border-radius: 50%;
+              margin-right: 8px;
+            }
+
+            .info {
+              .author-name {
+                display: block;
+              }
+
+              .date {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(lg) {
+    .table-talk-inner {
+      .container {
+        .table-talk-card {
+          height: auto;
+
+          .image {
+            width: 250px;
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(md) {
+    .table-talk-inner {
+      .container {
+        .table-talk-card {
+          height: auto;
+          flex-direction: column;
+
+          .image {
+            width: 100%;
+            height: 250px;
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(sm) {
+    .table-talk-inner {
+      .container {
+        .table-talk-card {
+          height: auto;
+          flex-direction: column;
+
+          .image {
+            width: 100%;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+}
