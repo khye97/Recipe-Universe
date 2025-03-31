@@ -70,7 +70,9 @@ $("header").load("/include/header.html", function () {
 // main section ------------------------------------
 
 // card bookmark button
-$(".book-mark").on("click", function () {
+$(".book-mark").on("click", function (event) {
+  event.preventDefault();
+  event.stopPropagation();
   $(this).children().toggleClass("bi-bookmark bi-bookmark-fill");
 });
 
@@ -102,4 +104,29 @@ $("#banner-countdown").countdown("2025/12/12", function (event) {
   $(this).html(
     event.strftime("<span>%H</span>:<span>%M</span>:<span>%S</span>")
   );
+});
+
+$("footer").load("/include/footer.html", function () {
+  $(window)
+    .resize(function () {
+      if (window.matchMedia("(max-width: 1024px)").matches) {
+        $("footer .menu-list").hide();
+      } else {
+        $("footer .menu-list").show();
+      }
+    })
+    .resize();
+
+  $(".menu-list-title").on("click", function () {
+    let $footerMenu = $(this).next();
+    let $chevron = $(this).children("i");
+
+    if ($footerMenu.is(":hidden")) {
+      $chevron.css("transform", "rotate(180deg)");
+      $footerMenu.slideDown(200);
+    } else {
+      $chevron.css("transform", "rotate(0deg)");
+      $footerMenu.slideUp(200);
+    }
+  });
 });
