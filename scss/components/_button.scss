@@ -1,5 +1,9 @@
 @use "../index";
 
+button {
+  color: index.$primary;
+}
+
 .btn-primary {
   font-size: index.$font-size-18;
   line-height: index.$line-height-120;
@@ -29,6 +33,7 @@
   height: 30px;
   border: 2px solid transparent;
   transition: all 200ms;
+  text-align: center;
 
   &:hover {
     background-color: transparent;
