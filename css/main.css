@@ -194,6 +194,10 @@ textarea {
   }
 }
 
+button {
+  color: #111111;
+}
+
 .btn-primary {
   font-size: 18px;
   line-height: 120%;
@@ -221,6 +225,7 @@ textarea {
   height: 30px;
   border: 2px solid transparent;
   transition: all 200ms;
+  text-align: center;
 }
 .btn-editor:hover {
   background-color: transparent;
