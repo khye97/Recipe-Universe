@@ -81,10 +81,7 @@ footer {
                   }
 
                   .bi-instagram {
-                    background: linear-gradient(to right, index.$instagram);
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    color: transparent;
+                    color: index.$instagram;
                   }
 
                   .bi-youtube {
