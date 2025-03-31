@@ -19,6 +19,44 @@
   }
 }
 
+.btn-editor {
+  font-size: index.$font-size-16;
+  line-height: index.$line-height-120;
+  background-color: index.$green;
+  color: index.$white;
+  border-radius: 4px;
+  width: 80px;
+  height: 30px;
+  border: 2px solid transparent;
+  transition: all 200ms;
+
+  &:hover {
+    background-color: transparent;
+    border: 2px solid index.$green;
+    color: index.$green;
+  }
+}
+
+.btn-view-editors {
+  display: none;
+  font-size: index.$font-size-16;
+  line-height: index.$line-height-120;
+  background-color: index.$green;
+  color: index.$white;
+  border-radius: 8px;
+  // padding: 10px 20px;
+  border: 2px solid transparent;
+  transition: all 200ms;
+  height: 35px;
+  width: 150px;
+
+  &:hover {
+    background-color: transparent;
+    border: 2px solid index.$green;
+    color: index.$green;
+  }
+}
+
 @media screen and (max-width: 576px) {
   .btn-primary-mobile {
     font-size: index.$font-size-16;
