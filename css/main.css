@@ -227,6 +227,9 @@ button {
   border: 2px solid transparent;
   transition: all 200ms;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .btn-editor:hover {
   background-color: transparent;
@@ -666,10 +669,7 @@ footer .footer-inner .footer-wrap .footer-content .sns .sns-list .sns-item a:hov
   color: #55acee;
 }
 footer .footer-inner .footer-wrap .footer-content .sns .sns-list .sns-item a:hover .bi-instagram {
-  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+  color: #8134af;
 }
 footer .footer-inner .footer-wrap .footer-content .sns .sns-list .sns-item a:hover .bi-youtube {
   color: #ff0000;
