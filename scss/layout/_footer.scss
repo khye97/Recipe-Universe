@@ -1,0 +1,166 @@
+@use "../index";
+@use "../layout/responsive" as *;
+
+footer {
+  background-color: index.$navy;
+  padding: index.$section-padding;
+
+  .footer-inner {
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      color: index.$white;
+
+      .logo {
+        height: 100px;
+        text-align: center;
+
+        img {
+          height: 100%;
+          display: inline-block;
+        }
+      }
+
+      .footer-content {
+        display: flex;
+        width: 60%;
+        justify-content: space-between;
+
+        .menu {
+          .menu-list-title {
+            margin-bottom: 8px;
+            font-size: index.$font-size-16;
+
+            i {
+              display: none;
+              transition: all 200ms;
+            }
+          }
+
+          .menu-list {
+            .menu-item {
+              a {
+                display: block;
+                color: index.$white;
+                padding: 2px 0;
+
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+
+        .sns {
+          .sns-title {
+            margin-bottom: 8px;
+            font-size: index.$font-size-16;
+          }
+
+          .sns-list {
+            display: flex;
+
+            .sns-item {
+              margin-right: 16px;
+
+              &:last-child {
+                margin-right: 0;
+              }
+
+              a {
+                color: index.$white;
+
+                &:hover {
+                  .bi-facebook {
+                    color: index.$facebook;
+                  }
+
+                  .bi-twitter {
+                    color: index.$twitter;
+                  }
+
+                  .bi-instagram {
+                    background: linear-gradient(to right, index.$instagram);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+                  }
+
+                  .bi-youtube {
+                    color: index.$youtube;
+                  }
+
+                  .bi-pinterest {
+                    color: index.$pinterest;
+                  }
+                }
+
+                i {
+                  font-size: 24px;
+                  transition: all 200ms;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .copyright {
+      color: index.$white;
+      text-align: center;
+      margin-top: 40px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 32px;
+
+    .footer-inner {
+      .footer-wrap {
+        display: block;
+
+        .logo {
+          margin-bottom: 40px;
+        }
+
+        .footer-content {
+          display: block;
+          width: 100%;
+
+          .menu {
+            .menu-list-title {
+              display: flex;
+              justify-content: space-between;
+              padding: 8px 0;
+              border-bottom: 1px solid index.$border;
+              margin: 0;
+
+              i {
+                display: inline-block;
+              }
+            }
+
+            .menu-list {
+              border-bottom: 1px solid index.$border;
+              padding: 8px 0;
+
+              .menu-item {
+                a {
+                }
+              }
+            }
+          }
+
+          .sns {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
