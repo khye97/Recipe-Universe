@@ -1239,3 +1239,145 @@ section.search {
     }
   }
 }
+
+/* section011 - newsletter ------------------------------------------ */
+section.newsletter {
+  background-color: index.$background;
+  padding: index.$section-padding;
+
+  .newsletter-inner {
+    .newsletter-wrap {
+      width: 780px;
+      margin: 0 auto;
+      background-color: index.$navy;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+
+      .newsletter-border {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        color: index.$white;
+        border: 1px solid index.$yellow;
+        padding: 40px;
+
+        .title {
+          font-size: index.$font-size-32;
+          font-weight: 500;
+        }
+
+        .desc {
+          font-size: index.$font-size-16;
+        }
+
+        .input-wrap {
+          input {
+            width: 280px;
+            height: 32px;
+            border-radius: 8px;
+            outline: none;
+            border: 1px solid index.$border;
+            margin-right: 4px;
+            padding-left: 10px;
+          }
+
+          .btn-subscribe {
+            width: 90px;
+            height: 32px;
+            color: index.$navy;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            background-color: index.$yellow;
+            transition: all 200ms;
+
+            &:hover {
+              color: index.$yellow;
+              border-color: index.$yellow;
+              background-color: transparent;
+            }
+          }
+        }
+
+        .agreement {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          input {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+          }
+
+          label {
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(lg) {
+    .newsletter-inner {
+      .newsletter-wrap {
+        width: 100%;
+      }
+    }
+  }
+
+  @include responsive(md) {
+    .newsletter-inner {
+      .newsletter-wrap {
+        width: 100%;
+      }
+    }
+  }
+
+  @include responsive(sm) {
+    .newsletter-inner {
+      .newsletter-wrap {
+        width: 100%;
+
+        .newsletter-border {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          color: index.$white;
+          border: 1px solid index.$yellow;
+          padding: 40px;
+
+          .title {
+            font-size: index.$font-size-32;
+            font-weight: 500;
+          }
+
+          .desc {
+            font-size: index.$font-size-16;
+          }
+
+          .input-wrap {
+            input {
+              width: 100%;
+              margin-bottom: 8px;
+            }
+
+            .btn-subscribe {
+              width: 100%;
+            }
+          }
+
+          .agreement {
+            input {
+              width: 20px;
+              height: 20px;
+            }
+
+            label {
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+  }
+}
