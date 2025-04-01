@@ -76,16 +76,26 @@ $(".book-mark").on("click", function (event) {
   $(this).children().toggleClass("bi-bookmark bi-bookmark-fill");
 });
 
-// taday's pick -----------------------
+// today's pick -----------------------
 // today's pick card title height
-let card = document.querySelectorAll(".todays-pick .todays-pick-card");
-card.forEach(function (cardItem) {
+document.fonts.ready.then(() => {
+  let cards = document.querySelectorAll(".todays-pick .todays-pick-card");
+  cards.forEach(function (cardItem) {
+    calcTitleHeight(cardItem);
+
+    window.addEventListener("resize", function () {
+      calcTitleHeight(cardItem);
+    });
+  });
+});
+
+function calcTitleHeight(cardItem) {
   let cardTitleHeight = cardItem.querySelector(".title").offsetHeight;
   cardItem.style.setProperty(
     "--todays-pick-title-height",
     `${cardTitleHeight + 32}px`
   );
-});
+}
 
 // meal-tabs ----------------------------
 // meal-tabs tab menu
