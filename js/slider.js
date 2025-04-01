@@ -46,7 +46,7 @@ $(window)
 var swiper = new Swiper(".todays-pick .swiper", {
   slidesPerView: 1,
   spaceBetween: 20,
-  // loop: true,
+  loop: true,
   navigation: {
     nextEl: ".todays-pick .swiper-button-next",
     prevEl: ".todays-pick .swiper-button-prev",
