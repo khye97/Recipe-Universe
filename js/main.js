@@ -142,3 +142,16 @@ $("footer").load("/include/footer.html", function () {
     }
   });
 });
+
+// go-to-top button
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 500) {
+    $(".go-to-top").css({ bottom: "30px" });
+  } else {
+    $(".go-to-top").css({ bottom: "-100%" });
+  }
+});
+
+$(".go-to-top").click(function () {
+  $("html, body").animate({ scrollTop: 0 }, 500);
+});
