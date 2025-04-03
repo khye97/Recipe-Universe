@@ -697,7 +697,7 @@ footer .footer-inner .footer-wrap .footer-content .sns .sns-list .sns-item a:hov
   color: #ff0000;
 }
 footer .footer-inner .footer-wrap .footer-content .sns .sns-list .sns-item a:hover .bi-pinterest {
-  color: #fd355c;
+  color: #bd081c;
 }
 footer .footer-inner .footer-wrap .footer-content .sns .sns-list .sns-item a i {
   font-size: 24px;
@@ -1227,6 +1227,9 @@ section.search .search-inner .container .center .content-wrap .popular-searches 
   display: inline;
   margin-right: 32px;
   cursor: pointer;
+}
+.meal-tabs .meal-tabs-inner .tabs .tab:hover {
+  color: #2e8b57;
 }
 .meal-tabs .meal-tabs-inner .tabs .tab.active {
   color: #2e8b57;
