@@ -470,6 +470,10 @@ section.search {
         margin-right: 32px;
         cursor: pointer;
 
+        &:hover {
+          color: index.$green;
+        }
+
         &.active {
           color: index.$green;
           font-weight: 500;
