@@ -725,4 +725,141 @@ main {
       }
     }
   }
+
+  @media screen and (max-width: 1024px) {
+    .recipe-detail-inner {
+      .sticky-btn {
+        position: static;
+
+        .sticky-btn-list {
+          display: flex;
+          gap: 10px;
+        }
+      }
+
+      .recipe-content {
+        width: 100%;
+        padding-right: 0;
+
+        .recipe-title-info {
+          .info {
+            flex-wrap: wrap;
+            gap: 10px;
+          }
+        }
+
+        .author {
+          position: static;
+          width: 50%;
+          flex-direction: row;
+          gap: 30px;
+          margin-bottom: 30px;
+
+          .avatar {
+            flex-shrink: 0;
+            margin-bottom: 0;
+          }
+
+          .author-info {
+            width: 100%;
+
+            .sns {
+              .sns-list {
+                margin-bottom: 0;
+              }
+            }
+
+            .desc {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .recipe-detail-inner {
+      .recipe-content {
+        .author {
+          width: 70%;
+        }
+
+        .recipe-body {
+          img {
+            width: 100%;
+          }
+
+          .slier {
+            width: 100%;
+          }
+          .recipe-summary {
+            .time-scale {
+              flex-direction: column;
+              gap: 40px;
+            }
+          }
+        }
+
+        .nutrition-facts {
+          width: 100%;
+
+          table.content {
+            width: 100%;
+          }
+        }
+
+        .reviews {
+          .rating-review-form {
+            flex-direction: column;
+
+            .rating {
+              padding-right: 0;
+              border-right: none;
+              margin-bottom: 50px;
+            }
+
+            .review-form {
+              padding-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(sm) {
+    .recipe-detail-inner {
+      .recipe-content {
+        .author {
+          width: 100%;
+        }
+
+        .recipe-body {
+          .editor-tip {
+            &::before {
+              content: none;
+            }
+          }
+
+          .recipe-summary {
+            .title {
+              line-height: 120%;
+            }
+
+            .time-scale {
+              .time-list {
+                .time-item-wrap {
+                  flex-direction: column;
+                  flex-wrap: wrap;
+                  gap: 15px;
+                  margin-bottom: 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
