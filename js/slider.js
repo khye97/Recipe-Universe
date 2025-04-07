@@ -1,5 +1,5 @@
 // section01 - main slider ---------------------------------------------------------
-var swiper = new Swiper(".main-slider .swiper", {
+var swiper1 = new Swiper(".main-slider .swiper", {
   spaceBetween: 20,
   loop: true,
   navigation: {
@@ -43,7 +43,7 @@ $(window)
   .resize();
 
 // section04 - today's pick ---------------------------------------------------------
-var swiper = new Swiper(".todays-pick .swiper", {
+var swiper2 = new Swiper(".todays-pick .swiper", {
   slidesPerView: 1,
   spaceBetween: 20,
   loop: true,
@@ -65,7 +65,7 @@ var swiper = new Swiper(".todays-pick .swiper", {
 });
 
 // section07 - quick & easy
-var swiper = new Swiper(".quick-easy .swiper", {
+var swiper3 = new Swiper(".quick-easy .swiper", {
   slidesPerView: 1,
   spaceBetween: 20,
   autoHeight: false,
@@ -84,5 +84,25 @@ var swiper = new Swiper(".quick-easy .swiper", {
     1024: {
       slidesPerView: 4,
     },
+  },
+});
+
+// detail.html ----------------------
+var swiper4 = new Swiper(".recipe-slider-thumb", {
+  spaceBetween: 10,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true,
+});
+
+var swiper5 = new Swiper(".recipe-slider", {
+  spaceBetween: 10,
+  loop: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  thumbs: {
+    swiper: swiper4,
   },
 });
