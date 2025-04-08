@@ -328,6 +328,9 @@ main {
 
             .scale {
               .btn-wrap {
+                display: flex;
+                gap: 5px;
+
                 span {
                   margin-right: 14px;
                 }
@@ -376,6 +379,7 @@ main {
             display: flex;
             gap: 10px;
             align-items: center;
+            flex-wrap: wrap;
 
             .cook-mode {
             }
