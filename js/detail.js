@@ -110,3 +110,24 @@ $(".reviews .review-form .star-icons i").on("click", function () {
   updateStars(selectedRating);
   $(".reviews .review-form .desc").html(starComment[selectedRating]);
 });
+
+// helpful button
+$(".btn-helpful").on("click", function () {
+  let count = Number($(this).children("span").text());
+
+  if ($(this).children("i").is(".bi-hand-thumbs-up")) {
+    $(this)
+      .children("i")
+      .removeClass("bi-hand-thumbs-up")
+      .addClass("bi-hand-thumbs-up-fill");
+    count += 1;
+  } else {
+    $(this)
+      .children("i")
+      .removeClass("bi-hand-thumbs-up-fill")
+      .addClass("bi-hand-thumbs-up");
+    count -= 1;
+  }
+
+  $(this).children("span").text(count);
+});
