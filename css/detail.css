@@ -35,6 +35,9 @@ main {
   height: 40px;
   background-color: #102a43;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .recipe-detail .recipe-detail-inner .sticky-btn .sticky-btn-list .sticky-btn-item button:hover i {
   color: #ffd700;
@@ -244,6 +247,9 @@ main {
   height: 35px;
   border-radius: 4px;
   border: 2px solid #bcbcbc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .time-scale .scale .btn-wrap .btn-scale.active {
   background-color: #102a43;
