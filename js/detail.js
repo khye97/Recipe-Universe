@@ -62,3 +62,51 @@ $(".btn-scale").on("click", function () {
   let scale = $(this).data("scale");
   setIngredientValue(scale);
 });
+
+// review star update
+let starComment = {
+  1: "Couldn't eat it",
+  2: "Didn't like it",
+  3: "It was OK",
+  4: "Liked it",
+  5: "Loved it",
+};
+
+let selectedRating = 1;
+
+function updateStars(rating) {
+  $(".reviews .review-form .star-icons i").each(function (index) {
+    if (index < rating) {
+      $(this).removeClass("bi-star").addClass("bi-star-fill");
+    } else {
+      $(this).removeClass("bi-star-fill").addClass("bi-star");
+    }
+  });
+}
+
+updateStars(selectedRating);
+
+// hover 이벤트
+$(".reviews .review-form .star-icons i").hover(
+  function () {
+    // mouseenter
+    let index = $(this).index();
+    let hoverRating = index + 1;
+
+    updateStars(hoverRating);
+    $(".reviews .review-form .desc").html(starComment[hoverRating]);
+  },
+  function () {
+    // mouseleave
+    updateStars(selectedRating);
+    $(".reviews .review-form .desc").html(starComment[selectedRating]);
+  }
+);
+
+// click 이벤트
+$(".reviews .review-form .star-icons i").on("click", function () {
+  selectedRating = $(this).index() + 1;
+
+  updateStars(selectedRating);
+  $(".reviews .review-form .desc").html(starComment[selectedRating]);
+});
