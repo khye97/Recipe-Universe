@@ -289,6 +289,72 @@ button {
   font-size: 30px;
 }
 
+.jump-to-recipe {
+  font-size: 20px;
+  background-color: #e1e1e1;
+  width: 217px;
+  height: 60px;
+  border-radius: 8px;
+  transition: all 200ms;
+}
+.jump-to-recipe:hover {
+  background-color: #bcbcbc;
+}
+
+.btn-toggle-wrap .toggle label.cook-mode-toggle {
+  width: 60px;
+  height: 30px;
+  display: block;
+  position: relative;
+  border-radius: 50px;
+  background-color: #bcbcbc;
+  cursor: pointer;
+}
+.btn-toggle-wrap .toggle span.btn-toggle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+}
+.btn-toggle-wrap .toggle label.cook-mode-toggle,
+.btn-toggle-wrap .toggle span.btn-toggle {
+  transition: all 200ms;
+}
+.btn-toggle-wrap .toggle #toggle:checked ~ .cook-mode-toggle {
+  background-color: #efbf04;
+}
+.btn-toggle-wrap .toggle #toggle:checked ~ .cook-mode-toggle .btn-toggle {
+  left: calc(100% - 28px);
+}
+
+.btn-submit {
+  width: 120px;
+  height: 35px;
+  background-color: #efbf04;
+  color: #ffffff;
+  border-radius: 4px;
+  transition: all 200ms;
+}
+.btn-submit:hover {
+  opacity: 0.5;
+}
+
+.load-more-reviews {
+  width: 200px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #efbf04;
+  font-size: 16px;
+  transition: all 200ms;
+}
+.load-more-reviews:hover {
+  opacity: 0.5;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -761,8 +827,7 @@ xl : <= 1025px
   display: grid;
   max-width: 1200px;
   grid-template-columns: repeat(12, 1fr);
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  gap: 20px;
 }
 
 @media screen and (max-width: 576px) {

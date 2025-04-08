@@ -1,0 +1,610 @@
+main {
+  background-color: #f7f7f7;
+}
+
+.recipe-detail .recipe-detail-inner {
+  position: relative;
+}
+.recipe-detail .recipe-detail-inner .breadcrumbs {
+  padding: 40px 0 20px 0;
+}
+.recipe-detail .recipe-detail-inner .breadcrumbs a.breadcrumb {
+  font-size: 16px;
+}
+.recipe-detail .recipe-detail-inner .breadcrumbs a.breadcrumb:hover {
+  opacity: 0.8;
+}
+.recipe-detail .recipe-detail-inner .sticky-btn {
+  position: absolute;
+  top: 450px;
+  right: 30px;
+  height: calc(100% - 185px);
+  z-index: 999;
+  pointer-events: none;
+}
+.recipe-detail .recipe-detail-inner .sticky-btn .sticky-btn-list {
+  position: sticky;
+  top: 100px;
+  pointer-events: auto;
+}
+.recipe-detail .recipe-detail-inner .sticky-btn .sticky-btn-list .sticky-btn-item {
+  margin-bottom: 8px;
+}
+.recipe-detail .recipe-detail-inner .sticky-btn .sticky-btn-list .sticky-btn-item button {
+  width: 40px;
+  height: 40px;
+  background-color: #102a43;
+  border-radius: 50%;
+}
+.recipe-detail .recipe-detail-inner .sticky-btn .sticky-btn-list .sticky-btn-item button:hover i {
+  color: #ffd700;
+}
+.recipe-detail .recipe-detail-inner .sticky-btn .sticky-btn-list .sticky-btn-item button i {
+  font-size: 20px;
+  color: #ffffff;
+}
+.recipe-detail .recipe-detail-inner .recipe-content {
+  position: relative;
+  width: 75%;
+  padding-right: 20px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-title-info {
+  margin-bottom: 20px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-title-info .recipe-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 20px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-title-info .info {
+  display: flex;
+  color: #898989;
+  margin-bottom: 20px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-title-info .info .star-rating i {
+  color: #ffd700;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-title-info .info .star-rating:after,
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-title-info .info .review-count:after {
+  content: "|";
+  padding: 4px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-title-info .desc {
+  font-size: 18px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .author {
+  width: 270px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border: 1px solid rgba(188, 188, 188, 0.3);
+}
+.recipe-detail .recipe-detail-inner .recipe-content .author .avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .author .avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .author .author-info .name {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  border-bottom: 1px solid #bcbcbc;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .author .author-info .sns .sns-list {
+  display: flex;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .author .author-info .sns .sns-list .sns-item a i {
+  font-size: 24px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .author .author-info .sns .sns-list .sns-item a i.bi-instagram {
+  color: #8134af;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .author .author-info .sns .sns-list .sns-item a i.bi-facebook {
+  color: #4267b2;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .author .author-info .sns .sns-list .sns-item a i.bi-pinterest {
+  color: #bd081c;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body {
+  font-size: 18px;
+  line-height: 150%;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body img {
+  width: 700px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .slier {
+  width: 700px;
+  margin: 40px 0;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .slier .recipe-slider {
+  margin-bottom: 10px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .slier .recipe-slider .swiper-wrapper .swiper-slide img {
+  width: 100%;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .slier .recipe-slider-thumb .swiper-wrapper .swiper-slide::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .slier .recipe-slider-thumb .swiper-wrapper .swiper-slide.swiper-slide-thumb-active::before {
+  background-color: rgba(0, 0, 0, 0);
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .slier .recipe-slider-thumb .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .main-desc {
+  margin-bottom: 50px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body p {
+  margin: 24px 0;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .editor-tip {
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .editor-tip::before {
+  content: "";
+  width: 100%;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  background-color: #ffd700;
+  z-index: -1;
+  transform: translateY(-50%);
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body h6 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 20px 0;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary {
+  background-color: #ffffff;
+  padding: 40px;
+  margin-bottom: 60px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .title {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .time-scale {
+  display: flex;
+  gap: 80px;
+  border-bottom: 1px solid #bcbcbc;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .time-scale .time-list {
+  flex-grow: 1;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .time-scale .time-list .time-item-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .time-scale .time-list .time-item-wrap .time-item {
+  border-left: 5px solid #ffd700;
+  padding-left: 16px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .time-scale .time-list .time-item-wrap .time-item .time-title {
+  display: block;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .time-scale .time-list .servings {
+  border-left: 5px solid #ffd700;
+  padding-left: 16px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .time-scale .time-list .servings .servings-title {
+  display: block;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .time-scale .scale .btn-wrap span {
+  margin-right: 14px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .time-scale .scale .btn-wrap .btn-scale {
+  width: 50px;
+  height: 35px;
+  border-radius: 4px;
+  border: 2px solid #bcbcbc;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .time-scale .scale .btn-wrap .btn-scale.active {
+  background-color: #102a43;
+  color: #ffffff;
+  border-color: #102a43;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .ingredients {
+  margin-bottom: 30px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .ingredients .title {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .ingredients .ingredient-list .ingredient-item {
+  list-style: disc inside;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .ingredients .ingredient-list .ingredient-item::marker {
+  color: black;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .btn-toggle-wrap {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .btn-toggle-wrap .desc {
+  font-size: 14px;
+  color: #898989;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .method .title {
+  font-size: 32px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .method .step {
+  font-weight: 500;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .method .method-desc {
+  margin: 4px 0 20px 0;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .method img {
+  margin-bottom: 50px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .nutrition-facts {
+  font-size: 14px;
+  width: 530px;
+  margin-bottom: 60px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .nutrition-facts .title {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .nutrition-facts .summary span {
+  display: block;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .nutrition-facts .summary span:last-child {
+  text-align: right;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .nutrition-facts table.content {
+  width: 530px;
+  border-collapse: collapse;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .nutrition-facts table.content tr {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .nutrition-facts table.content tr th {
+  text-align: left;
+  font-weight: 400;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .nutrition-facts table.content tr th span {
+  margin-left: 8px;
+  color: #898989;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .nutrition-facts table.content tr th:nth-child(3) {
+  padding-left: 30px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .nutrition-facts .desc {
+  line-height: 120%;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews {
+  margin-bottom: 60px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .title {
+  font-size: 32px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form {
+  background-color: #ffffff;
+  padding: 50px;
+  display: flex;
+  margin-bottom: 30px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .rating {
+  border-right: 1px solid #bcbcbc;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .rating .rating-summary {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .rating .rating-summary .star-icons i {
+  color: #ffd700;
+  font-size: 20px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .rating .rating-summary .scroe {
+  font-size: 20px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .rating .rating-count {
+  margin-bottom: 16px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .rating .rating-detail-list .rating-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .rating .rating-detail-list .rating-detail-item i {
+  color: #ffd700;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .rating .rating-detail-list .rating-detail-item .progress-bar {
+  width: 180px;
+  height: 8px;
+  background-color: #bcbcbc;
+  border-radius: 10px;
+  position: relative;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .rating .rating-detail-list .rating-detail-item .progress-bar span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffd700;
+  border-radius: 10px;
+  height: 8px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .review-form {
+  padding-left: 50px;
+  flex-grow: 1;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .review-form .my-rating {
+  margin-bottom: 20px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .review-form .my-rating .title {
+  font-size: 18px;
+  font-family: "Noto Sans", sans-serif;
+  margin-bottom: 10px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .review-form .my-rating .title .required {
+  font-size: 14px;
+  color: #898989;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .review-form .my-rating .stars {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .review-form .my-rating .stars .star-icons i {
+  font-size: 24px;
+  color: #ffd700;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .review-form .my-review {
+  margin-bottom: 10px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .review-form .my-review .title {
+  font-size: 18px;
+  font-family: "Noto Sans", sans-serif;
+  margin-bottom: 10px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .review-form .my-review textarea {
+  width: 100%;
+  height: 70px;
+  outline: none;
+  resize: none;
+  padding: 5px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .review-form .btn-submit {
+  display: block;
+  margin-left: auto;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content {
+  background-color: #ffffff;
+  padding: 30px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-count-title {
+  font-size: 16px;
+  border-bottom: 1px solid #bcbcbc;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .review-item {
+  border-bottom: 1px solid #bcbcbc;
+  padding: 28px 0;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .review-item:last-child {
+  border-bottom: none;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .review {
+  margin-bottom: 20px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .review .review-writer .writer-info {
+  flex-grow: 1;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .review .review-writer .rating i {
+  color: #ffd700;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .reply.reply-author {
+  padding-left: 54px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .reply.reply-author .review-writer .badge {
+  display: block;
+  width: 115px;
+  height: 22px;
+  border-radius: 8px;
+  border: 1px solid #bcbcbc;
+  color: #898989;
+  text-align: center;
+  margin-left: 15px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .review-writer {
+  display: flex;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .review-writer .avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 16px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .review-writer .avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .review-writer .writer-info {
+  margin-bottom: 8px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .review-writer .writer-info .name {
+  display: block;
+  font-size: 16px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .review-writer .writer-info .date {
+  color: #898989;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .review-text {
+  margin-bottom: 10px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .review-text,
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .button-wrap {
+  padding-left: 54px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .button-wrap .btn-helpful i {
+  font-size: 16px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .button-wrap .btn-reply i {
+  font-size: 16px;
+  display: inline-block;
+  transform: translateY(4px);
+  margin-right: 4px;
+}
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .button-wrap .btn-helpful:hover,
+.recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .button-wrap .btn-reply:hover {
+  opacity: 0.5;
+}
+.recipe-detail .recipe-detail-inner .more-recipe {
+  padding-bottom: 60px;
+}
+.recipe-detail .recipe-detail-inner .more-recipe .section-title {
+  text-align: left;
+}
+@media screen and (max-width: 1024px) {
+  .recipe-detail .recipe-detail-inner .sticky-btn {
+    position: static;
+  }
+  .recipe-detail .recipe-detail-inner .sticky-btn .sticky-btn-list {
+    display: flex;
+    gap: 10px;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content {
+    width: 100%;
+    padding-right: 0;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .recipe-title-info .info {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .author {
+    position: static;
+    width: 50%;
+    flex-direction: row;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .author .avatar {
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .author .author-info {
+    width: 100%;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .author .author-info .sns .sns-list {
+    margin-bottom: 0;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .author .author-info .desc {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .recipe-detail .recipe-detail-inner .recipe-content .author {
+    width: 70%;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .recipe-body img {
+    width: 100%;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .recipe-body .slier {
+    width: 100%;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .time-scale {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .nutrition-facts {
+    width: 100%;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .nutrition-facts table.content {
+    width: 100%;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form {
+    flex-direction: column;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .rating {
+    padding-right: 0;
+    border-right: none;
+    margin-bottom: 50px;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .reviews .rating-review-form .review-form {
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  .recipe-detail .recipe-detail-inner .recipe-content .author {
+    width: 100%;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .recipe-body .editor-tip::before {
+    content: none;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .title {
+    line-height: 120%;
+  }
+  .recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .time-scale .time-list .time-item-wrap {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+}/*# sourceMappingURL=detail.css.map */
