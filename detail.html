@@ -39,7 +39,7 @@
           <div class="sticky-btn">
             <ul class="sticky-btn-list">
               <li class="sticky-btn-item">
-                <button type="button">
+                <button type="button" class="book-mark">
                   <i class="bi bi-bookmark"></i>
                 </button>
               </li>
@@ -232,24 +232,37 @@
                   <div class="scale">
                     <div class="btn-wrap">
                       <span>Scale</span>
-                      <button class="btn-scale half active">1/2x</button>
-                      <button class="btn-scale one">1x</button>
-                      <button class="btn-scale two">2x</button>
+                      <button data-scale="1/2x" class="btn-scale active">
+                        1/2x
+                      </button>
+                      <button data-scale="1x" class="btn-scale">1x</button>
+                      <button data-scale="2x" class="btn-scale">2x</button>
                     </div>
                   </div>
                 </div>
                 <div class="ingredients">
                   <h3 class="title">INGREDIENTS</h3>
                   <ul class="ingredient-list">
-                    <li class="ingredient-item">
-                      3 pounds small red new potatoes, halved
+                    <li data-ingredient-name="potatoes" class="ingredient-item">
+                      <span class="quantity">3</span> pounds small red new
+                      potatoes, halved
                     </li>
-                    <li class="ingredient-item">¼ cup olive oil</li>
-                    <li class="ingredient-item">
-                      1 teaspoon salt and freshly ground black pepper
+                    <li
+                      data-ingredient-name="olive-oil"
+                      class="ingredient-item"
+                    >
+                      <span class="quantity">1/4</span> cup olive oil
                     </li>
-                    <li class="ingredient-item">
-                      2 teaspoons minced garlic (about 2 cloves)
+                    <li
+                      data-ingredient-name="black-pepper"
+                      class="ingredient-item"
+                    >
+                      <span class="quantity">1</span> teaspoon salt and freshly
+                      ground black pepper
+                    </li>
+                    <li data-ingredient-name="garlic" class="ingredient-item">
+                      <span class="quantity">2</span> teaspoons minced garlic
+                      (about 2 cloves)
                     </li>
                   </ul>
                 </div>
