@@ -474,7 +474,7 @@ main {
 .recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .reply.reply-author .review-writer .badge {
   display: block;
   width: 115px;
-  height: 22px;
+  height: 100%;
   border-radius: 8px;
   border: 1px solid #bcbcbc;
   color: #898989;
@@ -485,6 +485,7 @@ main {
   display: flex;
 }
 .recipe-detail .recipe-detail-inner .recipe-content .reviews .review-content .review-list .review-writer .avatar {
+  flex-shrink: 0;
   width: 38px;
   height: 38px;
   border-radius: 50%;
