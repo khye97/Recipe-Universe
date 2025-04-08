@@ -239,6 +239,10 @@ main {
 .recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .time-scale .time-list .servings .servings-title {
   display: block;
 }
+.recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .time-scale .scale .btn-wrap {
+  display: flex;
+  gap: 5px;
+}
 .recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .time-scale .scale .btn-wrap span {
   margin-right: 14px;
 }
@@ -275,6 +279,7 @@ main {
   display: flex;
   gap: 10px;
   align-items: center;
+  flex-wrap: wrap;
 }
 .recipe-detail .recipe-detail-inner .recipe-content .recipe-body .recipe-summary .btn-toggle-wrap .desc {
   font-size: 14px;
