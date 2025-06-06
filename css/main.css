@@ -88,6 +88,17 @@ textarea {
   color: #111111;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -1877,6 +1888,9 @@ section.newsletter .newsletter-inner .newsletter-wrap .newsletter-border .title 
 }
 section.newsletter .newsletter-inner .newsletter-wrap .newsletter-border .desc {
   font-size: 16px;
+}
+section.newsletter .newsletter-inner .newsletter-wrap .newsletter-border .input-wrap {
+  margin-bottom: 16px;
 }
 section.newsletter .newsletter-inner .newsletter-wrap .newsletter-border .input-wrap input {
   width: 280px;
