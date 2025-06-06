@@ -28,7 +28,7 @@ $("header").load("/include/header.html", function () {
   });
 
   // mobile-nav close (사이드바 외부 클릭 시 닫힘)
-  $(document).on("touchend", function (event) {
+  $(document).on("touchend click", function (event) {
     if ($(".nav").has(event.target).length === 0) {
       $(".nav").removeClass("active");
     }
@@ -45,7 +45,7 @@ $("header").load("/include/header.html", function () {
   });
 
   // nav accordion menu open
-  $(".menu-item-wrap").on("touchend", function (e) {
+  $(".menu-item-wrap").on("touchend click", function (e) {
     e.preventDefault();
     e.stopPropagation();
 
