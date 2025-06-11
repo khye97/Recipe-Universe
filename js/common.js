@@ -17,7 +17,7 @@ $("header").load("/include/header.html", function () {
   });
 
   // mobile-nav open
-  $(".mobile-nav-open").on("click", function () {
+  $(".mobile-nav-open").on("click", function (e) {
     $(".lnb").css("display", "none");
     $(".nav").addClass("active");
   });
@@ -29,7 +29,10 @@ $("header").load("/include/header.html", function () {
 
   // mobile-nav close (사이드바 외부 클릭 시 닫힘)
   $(document).on("touchend click", function (event) {
-    if ($(".nav").has(event.target).length === 0) {
+    if (
+      $(".nav").has(event.target).length === 0 &&
+      $(event.target).closest(".mobile-nav-open").length === 0
+    ) {
       $(".nav").removeClass("active");
     }
   });
