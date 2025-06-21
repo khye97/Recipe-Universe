@@ -85,21 +85,12 @@ main {
             i {
               color: index.$yellow;
             }
-
-            span {
-            }
-          }
-
-          .review-count {
           }
 
           .star-rating:after,
           .review-count:after {
             content: "|";
             padding: 4px;
-          }
-
-          .date {
           }
         }
 
@@ -171,16 +162,10 @@ main {
                     &.bi-pinterest {
                       color: index.$pinterest;
                     }
-
-                    &.bi-envelope {
-                    }
                   }
                 }
               }
             }
-          }
-
-          .desc {
           }
         }
       }
@@ -212,6 +197,8 @@ main {
           .recipe-slider-thumb {
             .swiper-wrapper {
               .swiper-slide {
+                cursor: pointer;
+
                 &::before {
                   content: "";
                   width: 100%;
@@ -307,9 +294,6 @@ main {
                   .time-title {
                     display: block;
                   }
-
-                  .time {
-                  }
                 }
               }
 
@@ -319,9 +303,6 @@ main {
 
                 .servings-title {
                   display: block;
-                }
-
-                .serving-value {
                 }
               }
             }
@@ -380,9 +361,6 @@ main {
             gap: 10px;
             align-items: center;
             flex-wrap: wrap;
-
-            .cook-mode {
-            }
 
             .desc {
               font-size: index.$font-size-14;
@@ -497,7 +475,7 @@ main {
                 }
               }
 
-              .scroe {
+              .score {
                 font-size: index.$font-size-20;
               }
             }
@@ -511,9 +489,6 @@ main {
                 display: flex;
                 align-items: center;
                 gap: 10px;
-
-                span {
-                }
 
                 i {
                   color: index.$yellow;
@@ -568,9 +543,6 @@ main {
                     font-size: 24px;
                     color: index.$yellow;
                   }
-                }
-
-                .desc {
                 }
               }
             }
@@ -637,9 +609,6 @@ main {
               }
             }
 
-            .reply {
-            }
-
             .reply.reply-author {
               padding-left: calc(38px + 16px);
 
@@ -702,8 +671,6 @@ main {
               .btn-helpful {
                 i {
                   font-size: 16px;
-                }
-                span {
                 }
               }
 
