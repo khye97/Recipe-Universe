@@ -209,6 +209,7 @@ textarea {
 button {
   color: #111111;
   text-align: center;
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -226,6 +227,13 @@ button {
   background-color: transparent;
   border: 2px solid #2e8b57;
   color: #2e8b57;
+}
+
+.get-recipe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .btn-editor {
