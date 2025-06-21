@@ -3,6 +3,12 @@
 
 ### [노션에서 README 보기](https://www.notion.so/Recipe-Universe-2096a24b2b6380769527f1d8f8da5251)<br><br><br>
 
+## 포트폴리오 바로가기 링크
+
+### [Front-page 바로가기](https://recipe-universe-hyejin.netlify.app/)<br>
+
+### [Detail-page 바로가기](https://recipe-universe-hyejin.netlify.app/detail)<br><br><br>
+
 ## 1. 프로젝트 명
 
 ### Recipe Universe<br><br><br>
@@ -21,7 +27,31 @@
 ## 2. 프로젝트 개요
 
 각종 음식 레시피를 모아 보여주는 웹 사이트입니다. 해외 레시피 웹사이트들을 레퍼런스로 “Recipe Universe”라는 새로운 웹 사이트 플랫폼을 창작하였습니다.
-<br><br><br>
+<br><br>
+
+### ✅ 프로젝트 주요 기능
+
+- 웹접근성을 고려한 설계
+  - 시멘틱 태그를 활용한 설계
+  - heading 태그의 명확한 구조 설계
+- 반응형 웹으로 구현
+  - 4구간의 break-point로 뷰포트 사이즈별 상세한 대응이 가능하도록 설계
+- SCSS 사용
+  - mixin, 변수, 중첩 문법 활용
+- 반복되는 UI 컴포넌트화로 코드 재사용성 증대
+  - Card UI, 버튼 UI 컴포넌트화
+- 여러 페이지에서 재사용되는 코드 모듈화 - Header, Footer를 별도의 HTML 파일로 분리
+  <br><br>
+
+### ✅ 프로젝트 제작 기간
+
+- 2025.03.06 ~ 2025.04.08 (약 4주)
+  <br><br>
+
+### ✅ 프로젝트 제작 인원
+
+- 1인 (기획부터 퍼블리싱까지 개인 진행)
+  <br><br><br>
 
 ## 3. 웹 사이트 구성 및 주요 기능
 
@@ -107,7 +137,7 @@
 
 #### Break Point
 
-```
+```css
 @media screen and (max-width: 576px) {
   /* sm */
   /* 모바일 */
@@ -249,7 +279,50 @@ RECIPE-UNIVERSE/
 - JavaScript 코드를 기능별 함수 단위로 모듈화 하여 중복되는 코드를 줄이고, 재사용하는 방법을 배웠습니다.
   <br><br><br>
 
-## 7. 개선 사항
+## 7. 트러블 슈팅
+
+### ❗Card item의 title만 노출시키기 위한 offsetHeight 계산 오류
+
+1. 발생 위치
+   - Today’s pick
+2. 현상
+   - swiper 내부 슬라이드 아이템에서 .title의 height 값을 계산하여 .content의 bottom 값을 조작 방식을 사용했지만, 일부 .title의 높이 값이 잘못 계산되는 오류가 발생하였습니다.
+3. 원인
+   - swiper가 슬라이드 아이템의 DOM을 복제하고 재배치하는 과정에서 레이아웃이 완전히 렌더링되지 않은 상황에 .offsetHeight의 계산이 실행되기 때문이었습니다.
+4. 해결 방법
+   - swiper의 on.resize 옵션을 사용하여 슬라이드 아이템 resize시 height의 크기가 다시 계산되도록 함수를 호출하였습니다.
+5. 배운 점
+   - .offsetHeight는 브라우저의 레이아웃 렌더링이 끝난 후에 실행되어야 정확한 값을 계산할 수 있다는것을 배웠습니다.
+   - DOM 요소를 조작할 때는 레이아웃 렌더링 완료 여부와 코드 실행 시점을 더 깊이 고려해야 한다는 것을 배웠습니다.
+6. 향후 개선 방향
+   - swiper의 on.resize는 레이아웃 렌더링 완료 후에 실행된다는 것을 보장할 수 없습니다. 이런 경우 requestAnimationFrame() 함수를 추가적으로 사용하여 코드 실행 시점을 보장할 수 있도록 해야합니다. 따라서 현재 구조에서도 정상 작동은 하지만, 더 안정적인 실행을 위해 requestAnimationFrame()를 사용한 리팩토링을 고려하고 있습니다.
+     <br><br>
+
+```javascript
+var swiper2 = new Swiper(".todays-pick .swiper", {
+	...
+	// swiper의 초기화와 resize 시점에 함수를 호출
+  on: {
+    init: () => {
+      calcTitleHeight();
+    },
+    resize: () => {
+      calcTitleHeight();
+    },
+  },
+});
+
+function calcTitleHeight() {
+	...
+	// 브라우저 렌더링이 끝난 후 .offsetHeight 계산
+  let cardTitleHeight = cardItem.querySelector(".title").offsetHeight;
+	...
+}
+```
+
+<br><br><br>
+
+## 8. 개선 사항
 
 ### ✅ &lt;a&gt; 태그 내부에 &lt;button&gt; 태그가 있는 구조 개선
 
@@ -260,7 +333,7 @@ RECIPE-UNIVERSE/
 
 <br><br><br>
 
-## 8. 프로젝트를 마치며 (느낀점)
+## 9. 프로젝트를 마치며 (느낀점)
 
 프로젝트의 기획부터 디자인, 퍼블리싱, 기능 구현까지 스스로 모든 것을 해낸다는 것은 쉬운 일이 아닙니다. 프로젝트 초기, 야심찬 마음으로 시작했지만 시간이 지날 수록 이 프로젝트를 제대로 완성할 수 있을지 고민이 깊었습니다.
 프로젝트 완성을 위해 넘어야 할 산들이 많았지만, “You will never know until you try. (직접 시도해 보기 전엔 모른다)”라는 말을 되새기며 하나씩 문제를 해결해 나갔습니다. 이 과정에서 HTML의 구조적 설계, 부드러운 사용자 인터렉션 구현을 위한 JavaScrip와 jQuery 코드 설계 등에 대해 깊게 고민해 볼 수 있었습니다. 하나를 고치면 다른 하나가 고장나는 웃기고도 슬픈 상황도 여러번 있었지만, 혼자 처음부터 끝까지 프로젝트를 완성해낸 데 대해 스스로 자신감을 가지게 되었습니다. 또한 앞으로 실무에서 퍼블리셔로 근무하게 됐을 때 더 어려운 프로젝트를 접하게 되더라도 지금 이 경험을 잊지 않으며 나아간다면 분명 해낼 수 있을 것이라는 생각을 가지게 되었습니다.
