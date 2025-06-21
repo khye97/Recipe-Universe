@@ -3,6 +3,7 @@
 button {
   color: index.$primary;
   text-align: center;
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -22,6 +23,13 @@ button {
     border: 2px solid index.$green;
     color: index.$green;
   }
+}
+
+.get-recipe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .btn-editor {
