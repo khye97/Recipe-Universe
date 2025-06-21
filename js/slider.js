@@ -62,7 +62,28 @@ var swiper2 = new Swiper(".todays-pick .swiper", {
       slidesPerView: 4,
     },
   },
+  on: {
+    init: () => {
+      calcTitleHeight();
+    },
+    resize: () => {
+      calcTitleHeight();
+    },
+  },
 });
+
+// today's pick card title height
+function calcTitleHeight() {
+  let cards = document.querySelectorAll(".todays-pick .todays-pick-card");
+
+  cards.forEach(function (cardItem) {
+    let cardTitleHeight = cardItem.querySelector(".title").offsetHeight;
+    cardItem.style.setProperty(
+      "--todays-pick-title-height",
+      `${cardTitleHeight + 32}px`
+    );
+  });
+}
 
 // section07 - quick & easy
 var swiper3 = new Swiper(".quick-easy .swiper", {

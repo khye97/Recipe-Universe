@@ -1,24 +1,3 @@
-// today's pick -----------------------
-// today's pick card title height
-document.fonts.ready.then(() => {
-  let cards = document.querySelectorAll(".todays-pick .todays-pick-card");
-  cards.forEach(function (cardItem) {
-    calcTitleHeight(cardItem);
-
-    window.addEventListener("resize", function () {
-      calcTitleHeight(cardItem);
-    });
-  });
-});
-
-function calcTitleHeight(cardItem) {
-  let cardTitleHeight = cardItem.querySelector(".title").offsetHeight;
-  cardItem.style.setProperty(
-    "--todays-pick-title-height",
-    `${cardTitleHeight + 32}px`
-  );
-}
-
 // meal-tabs ----------------------------
 // meal-tabs tab menu
 $(".tab").on("click", function () {
