@@ -237,10 +237,9 @@ RECIPE-UNIVERSE/
 
 ### ✅ JavaScript (jQuery)
 
-### ✅ jQuery Plugin
+### ✅ JavaScript Library: Swiper
 
-1. Swiper
-2. Countdown Plugin
+### ✅ jQuery Plugin: Countdown
 
 ### ✅ Bootstrap Icons
 
@@ -276,6 +275,20 @@ RECIPE-UNIVERSE/
 ### ✅ JavaScript 함수 설계
 
 - JavaScript 코드를 기능별 함수 단위로 모듈화 하여 중복되는 코드를 줄이고, 재사용하는 방법을 배웠습니다.
+  <br><br><br>
+
+### ✅ Git을 사용해 의미 있는 단위로 commit 기록
+
+- Git을 통해 프로젝트에서 의미있는 단위로 변화를 기록하고 commit 하는 습관을 익혔습니다.
+- commit 메세지가 중복되거나 지나치게 세분화된 경우 `git rebase -i` 명령어를 통해 여러 개의 commit 기록을 하나로 병합하는 방법을 배웠습니다. 이를 통해 프로젝트의 commit 히스토리를 더 깔끔하게 유지할 수 있음을 경험했습니다.
+  <br><br><br>
+
+### ✅ 라이브러리와 플러그인의 차이점
+
+- 처음에는 Swiper를 jQuery 플러그인이라고 알고 있었지만, 실제로는 jQuery에 의존하지 않는 JavaScript 라이브러리라는 것을 알게 되었습니다.
+- JavaScript 라이브러리와 플러그인의 차이는 “동작을 위해 기반 시스템(호스트)이 필요한가”에 따라 구분된다는 것을 배웠습니다.
+- 예를 들어, Recipe Universe에 사용된 Swiper는 독립적으로 동작하므로 JavaScript 라이브러리이고, Countdown은 jQuery 위에서만 실행되므로 jQuery 플러그인입니다.
+- 이처럼 같은 목적(슬라이더 구현)을 가진 도구라도, 실행을 위해 jQuery와 같은 기반 시스템이 필요한지 여부에 따라 라이브러리 또는 플러그인으로 구분될 수 있다는 점을 새롭게 이해하게 되었습니다. (예: Swiper는 JavaScript Library, Slick은 jQuery Plugin)
   <br><br><br>
 
 ## 7. 트러블 슈팅
@@ -331,6 +344,13 @@ function calcTitleHeight() {
 - 이 프로젝트에서는 `event.preventDefault()` , `event.stopPropagation()` 코드를 통해 이벤트 버블링을 막았지만, 기본적으로는 &lt;a&gt; 태그 내부에 &lt;button&gt;태그가 존재하는 구조 자체를 수정하는 것이 더 바람직하다는 것을 알게되었습니다. 따라서 차후 프로젝트를 개선하게 된다면 이 구조를 수정할 계획입니다.
 
 <br><br><br>
+
+### ✅ 키보드의 tab으로 웹 페이지 탐색시 swiper의 무한 슬라이드에 갇히는 상황 인지 및 개선 계획
+
+- 접근성 향상을 위해 tab으로 웹 페이지 탐색을 체크하던 중 swiper의 loop: true 속성으로 인해 무한 슬라이드가 만들어졌고, 이로 인해 tab이 다음 섹션으로 넘어가지 못하고 무한 루프에 갇히는 상황을 발견하였습니다.
+- 구글링을 해봤지만 정보를 찾지 못했고 ChatGPT에게 질문한 결과, 키보드 접근성이 매우 중요한 웹 페이지라면 swiper의 loop: false를 사용하는 것이 좋고, 만약 이 속성을 true로 유지해야 할 경우 자바스크립트 로직을 통해 제어해야 한다는 것을 알게되었습니다.
+- 현재 프로젝트에서는 loop: true를 유지하고 있지만, 차후 프로젝트 개선 과정에서 이 무한루프를 빠져나가는 JavaScript코드를 작성해 tab을 이용한 접근성을 향상시킬 계획입니다.
+  <br><br><br>
 
 ## 9. 프로젝트를 마치며 (느낀점)
 
